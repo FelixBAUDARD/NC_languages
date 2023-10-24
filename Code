@@ -7,5 +7,17 @@ source("cleanup.R")
 options(repr.matrix.max.rows = 6)
 
 #reading all the files and assigning them to objects
-happy_df <- read_excel(path = "data/WHR2018Chapter2OnlineData.xls", sheet = 1)
-happy_df
+connaissance_db <- read_excel(path = "locuteurs-languevernaculaire", sheet = 1)
+
+municipality_2019 <- read_excel(path = "data/connaissance-languemelanesienne.xls", sheet = 1)
+age_2019 <- read_excel(path = "data/connaissance-languemelanesienne.xls", sheet = 2)
+municipality_2014 <- read_excel(path = "data/connaissance-languemelanesienne.xls", sheet = 3)
+age_2014 <- read_excel(path = "data/connaissance-languemelanesienne.xls", sheet = 4)
+municipality_2009  <- read_excel(path = "data/connaissance-languemelanesienne.xls", sheet = 5)
+age_2009 <- read_excel(path = "data/connaissance-languemelanesienne.xls", sheet = 6)
+municipality_2004 <- read_excel(path = "data/connaissance-languemelanesienne.xls", sheet = 7)
+age_2004 <- read_excel(path = "data/connaissance-languemelanesienne.xls", sheet = 8)
+age_1996 <- read_excel(path = "data/connaissance-languemelanesienne.xls", sheet = 9)
+
+students_db <- read_excel(path = "data/enseignement-languesvernaculaires.xls", sheet = 1)
+secondary_db <- read_excel(path = "data/enseignement-languesvernaculaires.xls", sheet = 2)
