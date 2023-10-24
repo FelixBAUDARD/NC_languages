@@ -1,1 +1,11 @@
-j
+#downloading the different used librairies in the R code 
+library(tidyverse)
+library(repr)
+library(readxl)
+source("tests.R")
+source("cleanup.R")
+options(repr.matrix.max.rows = 6)
+
+#reading all the files and assigning them to objects
+happy_df <- read_excel(path = "data/WHR2018Chapter2OnlineData.xls", sheet = 1)
+happy_df
