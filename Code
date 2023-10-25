@@ -4,21 +4,21 @@ library(repr)
 library(readxl)
 
 #reading all the files and assigning them to objects
-languages_speakers <- read_excel(path = "locuteurs-languevernaculaire_redable.xls", sheet = 1)
-municipality_speakers <- read_excel(path = "locuteurs-languevernaculaire_redable.xls", sheet = 2)
-languages_municipality <- read_excel(path = "locuteurs-languevernaculaire_redable.xls", sheet = 3)
+languages_speakers <- read_excel(path = "locuteurs-languevernaculaire_readable.xlsx", sheet = 1)
+municipality_speakers <- read_excel(path = "locuteurs-languevernaculaire_readable.xlxs", sheet = 2)
+languages_municipality <- read_excel(path = "locuteurs-languevernaculaire_readable.xlsx", sheet = 3)
 
-municipality_2019 <- read_excel(path = "connaissance-languemelanesienne_redable.xls", sheet = 1)
-age_2019 <- read_excel(path = "connaissance-languemelanesienne_redable.xls", sheet = 2)
-municipality_2014 <- read_excel(path = "connaissance-languemelanesienne_redable.xls", sheet = 3)
-age_2014 <- read_excel(path = "connaissance-languemelanesienne_redable.xls", sheet = 4)
-municipality_2009  <- read_excel(path = "connaissance-languemelanesienne_redable.xls", sheet = 5)
-age_2009 <- read_excel(path = "connaissance-languemelanesienne_redable.xls", sheet = 6)
-municipality_2004 <- read_excel(path = "connaissance-languemelanesienne_redable.xls", sheet = 7)
-age_2004 <- read_excel(path = "connaissance-languemelanesienne_redable.xls", sheet = 8)
-age_1996 <- read_excel(path = "connaissance-languemelanesienne_redable.xls", sheet = 9)
+municipality_2019 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 1)
+age_2019 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 2)
+municipality_2014 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 3)
+age_2014 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 4)
+municipality_2009  <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 5)
+age_2009 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 6)
+municipality_2004 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 7)
+age_2004 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 8)
+age_1996 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 9)
 
-students_db <- read_excel(path = "enseignement-languesvernaculaires_redable.xls", sheet = 1)
+students_db <- read_excel(path = "enseignement-languesvernaculaires_readable.xlsx", sheet = 1)
 
 
 
