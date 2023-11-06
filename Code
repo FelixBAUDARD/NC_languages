@@ -1,24 +1,62 @@
 #downloading the different used librairies in the R code 
 library(tidyverse)
+library(scales) 
+install.packages("janitor")
+library(janitor)
 library(repr)
 library(readxl)
+install.packages("viridis")
+library(viridis)
 
 #reading all the files and assigning them to objects
-languages_speakers <- read_excel(path = "locuteurs-languevernaculaire_readable.xlsx", sheet = 1)
-municipality_speakers <- read_excel(path = "locuteurs-languevernaculaire_readable.xlxs", sheet = 2)
-languages_municipality <- read_excel(path = "locuteurs-languevernaculaire_readable.xlsx", sheet = 3)
+languages_speakers <- read_excel(path = "locuteurs-languevernaculaire_readable.xlsx", sheet = 1, skip = 5) |>
+rename(language = `...1`) |>
+rename(`2004` = `2004*`) |>
+rename(group = Groupe)
 
-municipality_2019 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 1)
-age_2019 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 2)
-municipality_2014 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 3)
-age_2014 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 4)
-municipality_2009  <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 5)
-age_2009 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 6)
-municipality_2004 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 7)
-age_2004 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 8)
-age_1996 <- read_excel(path = "connaissance-languemelanesienne_readable.xlsx", sheet = 9)
+age_2019 <- read_excel(path = "connaissance-languesmelanesienne_readable.xlsx", sheet = 2, skip = 6) |>
+            rename(age = `...1`) |>
+            rename(province = `Province`) |>
+            rename(non_speaker = `Aucune connaissance`) |>
+            rename(speaker = `Parle ou comprend une langue kanak`) |>
+            mutate(year = 2019)
 
-students_db <- read_excel(path = "enseignement-languesvernaculaires_readable.xlsx", sheet = 1)
+age_2014 <- read_excel(path = "connaissance-languesmelanesienne_readable.xlsx", sheet = 4, skip = 7) |>
+            rename(age = `...1`) |>
+            rename(province = `...5`) |>
+            rename(non_speaker = `Aucune connaissance`) |>
+            rename(speaker = `Parle ou comprend une langue kanak`) |>
+            rename(sexe = `Sexe`) |>
+            mutate(year = 2014)
+
+age_2009 <- read_excel(path = "connaissance-languesmelanesienne_readable.xlsx", sheet = 6, skip = 7) |>
+            rename(age = `...1`) |>
+            rename(non_speaker = `Aucune connaissance`) |>
+            rename(speaker = `Parle ou comprend une langue kanak`) |>
+            rename(province = `...5`) |>
+            mutate(year = 2009) |>
+            rename(sexe = Sexe)
+
+age_2004 <- read_excel(path = "connaissance-languesmelanesienne_readable.xlsx", sheet = 8, skip = 7) |>
+            rename(age = `...1`) |>
+            rename(non_speaker = `Aucune connaissance`) |>
+            rename(speaker = `Parle ou comprend une langue kanak`) |>
+            rename(province = `Province`) |>
+            rename(sexe = `Sexe`) |>
+            mutate(year = 2004)
+
+age_1996 <- read_excel(path = "connaissance-languesmelanesienne_readable.xlsx", sheet = 9, skip = 8) |>
+            rename(age = `...1`) |>
+            rename(non_speaker = `Ne parle pas une langue mélanésienne`) |>
+            rename(speaker = `Parle une langue mélanésienne`)  |>
+            rename(province = `Province`) |>
+            rename(sexe = `Sexe`) |>
+            mutate(year = 1996)
+            
+profile_db <- bind_rows(age_2019, age_2014, age_2009, age_2004, age_1996)
+head(profile_db)
+
+
 
 
 
